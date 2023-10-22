@@ -4,12 +4,14 @@
 # include <iostream>
 
 class Contact {
+	private:
+	std::string firstName;
+	std::string lastName;
+	std::string nickName;
+	std::string phoneNumber;
+	std::string darkestSecret;
 	public:
-		std::string firstName;
-		std::string lastName;
-		std::string nickName;
-		std::string phoneNumber;
-		std::string darkestSecret;
+		void getContactInfos(void);
 		void print(void);
 };
 

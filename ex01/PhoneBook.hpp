@@ -5,10 +5,10 @@
 # include "Contact.hpp"
 
 class PhoneBook {
-	public:
+	private:
 		Contact contacts[8];
 		int		index;
-
+	public:
 		void initPhoneBook (void);
 		void addContact(void);
 		void print(void);

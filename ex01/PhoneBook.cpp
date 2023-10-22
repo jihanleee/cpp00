@@ -5,11 +5,7 @@ void PhoneBook::initPhoneBook () {
 }
 
 void PhoneBook::addContact(void) {
-	std::cin >> contacts[index].firstName;
-	std::cin >> contacts[index].lastName;
-	std::cin >> contacts[index].nickName;
-	std::cin >> contacts[index].phoneNumber;
-	std::cin >> contacts[index].darkestSecret;
+
 	if (index != 7)
 		index++;
 }

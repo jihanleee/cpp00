@@ -11,8 +11,9 @@ class Contact {
 	std::string phoneNumber;
 	std::string darkestSecret;
 	public:
-		void getContactInfos(void);
-		void print(void);
+		int getContactInfos(void);
+		void printContact(void);
+		void printContactEntry(int index);
 };
 
 #endif

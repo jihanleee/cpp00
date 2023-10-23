@@ -9,9 +9,10 @@ class PhoneBook {
 		Contact contacts[8];
 		int		index;
 	public:
-		void initPhoneBook (void);
-		void addContact(void);
-		void print(void);
+		PhoneBook(void);
+		int addContact(void);
+		void printContactList(void);
+		int printChosenContact(void);
 };
 
 #endif

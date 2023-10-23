@@ -1,20 +1,39 @@
 #include <iostream>
+#include <string>
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
 
+void	printInitialMessage(void) {
+	std::cout << "Welcome to Contact manager!\n\n";
+	std::cout << "ADD: adds a contact to the phonebook!\n";
+	std::cout << "SEARCH: searches the contacts stored in the phonebook!\n";
+	std::cout << "EXIT: exits the program!\n";
+	std::cout << "\nType what you want to execute! : ";
+}
 
+int main() {
+	PhoneBook	phoneBook;
+	std::string	userInput;
 
-int main()
-{
-	PhoneBook	phone;
-	Contact		haha;
-	std::string	string;
-	int			i;
-
-	haha.print();
-	phone.initPhoneBook();
-	for (i = 0; i < 10; i++) {
-		phone.addContact();
+	printInitialMessage();
+	while (true) {
+		if (!std::getline(std::cin, userInput))
+			return (1);
+		if (userInput.compare("ADD") == 0) {
+			if (phoneBook.addContact() == 1)
+				return (1);
+		}
+		else if (userInput.compare("SEARCH") == 0) {
+			std::cout << "Wow, you want to SEARCH!\n";
+			phoneBook.printContactList();
+			phoneBook.printChosenContact();
+		}
+		else if (userInput.compare("EXIT") == 0) {
+			std::cout << "Wow, you want to EXIT! Bye! \U0001F63F \n" ;
+			return (0);
+		}
+		else
+			std::cout << userInput << "? what do you mean??";
+		std::cout << "\nEnter what you want to execute. : ";
 	}
-	phone.print();
 }

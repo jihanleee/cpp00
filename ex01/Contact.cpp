@@ -54,25 +54,53 @@ bool is_number(const std::string s) {
 
 int Contact::getContactInfos() {
 	std::cout << "What is the " << "First name ?: ";
-	if (!std::getline(std::cin, _firstName))
-		return (1);
+	while (1) {
+		if (!std::getline(std::cin, _firstName))
+			return (1);
+		if (_firstName.compare(""))
+			break ;
+		else
+			std::cout << "The field can't be empty: ";
+	}
 	std::cout << "What is the " << "Last name ?: ";
-	if (!std::getline(std::cin, _lastName))
-		return (1);
+	while (1) {
+		if (!std::getline(std::cin, _lastName))
+			return (1);
+		if (_lastName.compare(""))
+			break ;
+		else
+			std::cout << "The field can't be empty: ";
+	}
 	std::cout << "What is the " << "Nick name ?: ";
-	if (!std::getline(std::cin, _nickName))
-		return (1);
+	while (1) {
+		if (!std::getline(std::cin, _nickName))
+			return (1);
+		if (_nickName.compare(""))
+			break ;
+		else
+			std::cout << "The field can't be empty: ";
+	}
 	std::cout << "What is the " << "Phone number ?: ";
 	while (true) {
 		if (!std::getline(std::cin, _phoneNumber))
 			return (1);
-		if (!is_number(_phoneNumber))
+		if (!is_number(_phoneNumber)) {
 			std::cout << "Enter only numbers with no blanks: ";
+			continue;
+		}
+		if (_phoneNumber.compare(""))
+			break;
 		else
-			break ;
+			std::cout << "The field can't be empty: ";
 	}
 	std::cout << "What is the " << "Darkest secret ?: ";
-	if (!std::getline(std::cin, _darkestSecret))
-		return (1);
+	while (1) {
+		if (!std::getline(std::cin, _darkestSecret))
+			return (1);
+		if (_darkestSecret.compare(""))
+			break ;
+		else
+			std::cout << "The field can't be empty: ";
+	}
 	return (0);
 }

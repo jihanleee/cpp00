@@ -15,31 +15,31 @@ void printColumn(const std::string s) {
 	std::cout << s;
 }
 
-void Contact::printContactEntry(int index) {
+void Contact::printContactEntry(int _index) {
 	std::cout << "|";
 	std::cout << "         ";
-	std::cout << index;
+	std::cout << _index;
 	std::cout << "|";
-	printColumn(firstName);
+	printColumn(_firstName);
 	std::cout << "|";
-	printColumn(lastName);
+	printColumn(_lastName);
 	std::cout << "|";
-	printColumn(nickName);
+	printColumn(_nickName);
 	std::cout << "|";
 	std::cout << std::endl;
 }
 
 void Contact::printContact(void) {
-	std::cout << "Firstname: ";
-	std::cout << firstName << std::endl;
-	std::cout << "Lastname: ";
-	std::cout << lastName << std::endl;
+	std::cout << "First name: ";
+	std::cout << _firstName << std::endl;
+	std::cout << "Last name: ";
+	std::cout << _lastName << std::endl;
 	std::cout << "Nickname: ";
-	std::cout << nickName << std::endl;
-	std::cout << "Phonenumber: ";
-	std::cout << phoneNumber << std::endl;
-	std::cout << "Darkest Secret: ";
-	std::cout << darkestSecret << std::endl;
+	std::cout << _nickName << std::endl;
+	std::cout << "Phone number: ";
+	std::cout << _phoneNumber << std::endl;
+	std::cout << "Darkest secret: ";
+	std::cout << _darkestSecret << std::endl;
 }
 
 bool is_number(const std::string s) {
@@ -53,26 +53,26 @@ bool is_number(const std::string s) {
 }
 
 int Contact::getContactInfos() {
-	std::cout << "What is the " << "firstname ?: ";
-	if (!std::getline(std::cin, firstName))
+	std::cout << "What is the " << "First name ?: ";
+	if (!std::getline(std::cin, _firstName))
 		return (1);
-	std::cout << "What is the " << "lastname ?: ";
-	if (!std::getline(std::cin, lastName))
+	std::cout << "What is the " << "Last name ?: ";
+	if (!std::getline(std::cin, _lastName))
 		return (1);
-	std::cout << "What is the " << "nickname ?: ";
-	if (!std::getline(std::cin, nickName))
+	std::cout << "What is the " << "Nick name ?: ";
+	if (!std::getline(std::cin, _nickName))
 		return (1);
-	std::cout << "What is the " << "phonenumber ?: ";
+	std::cout << "What is the " << "Phone number ?: ";
 	while (true) {
-		if (!std::getline(std::cin, phoneNumber))
+		if (!std::getline(std::cin, _phoneNumber))
 			return (1);
-		if (!is_number(phoneNumber))
+		if (!is_number(_phoneNumber))
 			std::cout << "Enter only numbers with no blanks: ";
 		else
 			break ;
 	}
-	std::cout << "What is the " << "darkest secret ?: ";
-	if (!std::getline(std::cin, darkestSecret))
+	std::cout << "What is the " << "Darkest secret ?: ";
+	if (!std::getline(std::cin, _darkestSecret))
 		return (1);
 	return (0);
 }

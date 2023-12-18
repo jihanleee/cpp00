@@ -6,8 +6,8 @@
 
 class PhoneBook {
 	private:
-		Contact contacts[8];
-		int		index;
+		Contact _contacts[8];
+		int		_index;
 	public:
 		PhoneBook(void);
 		int addContact(void);

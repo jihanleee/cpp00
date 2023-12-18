@@ -8,7 +8,7 @@ void	printInitialMessage(void) {
 	std::cout << "ADD: adds a contact to the phonebook!\n";
 	std::cout << "SEARCH: searches the contacts stored in the phonebook!\n";
 	std::cout << "EXIT: exits the program!\n";
-	std::cout << "\nType what you want to execute! : ";
+	std::cout << "\nEnter what you want to execute! : ";
 }
 
 int main() {
@@ -26,7 +26,8 @@ int main() {
 		else if (userInput.compare("SEARCH") == 0) {
 			std::cout << "Wow, you want to SEARCH!\n";
 			phoneBook.printContactList();
-			phoneBook.printChosenContact();
+			if (phoneBook.printChosenContact() == 1)
+				return (1);
 		}
 		else if (userInput.compare("EXIT") == 0) {
 			std::cout << "Wow, you want to EXIT! Bye! \U0001F63F \n" ;

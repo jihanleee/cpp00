@@ -30,6 +30,10 @@ void Contact::printContactEntry(int _index) {
 }
 
 void Contact::printContact(void) {
+	if (!_firstName.compare("")) {
+		std::cout << "No contact available for the index\n";
+		return ;
+	}
 	std::cout << "First name: ";
 	std::cout << _firstName << std::endl;
 	std::cout << "Last name: ";
